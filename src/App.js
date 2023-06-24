@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {
+  BrowserRouter, Routes, Route, Link} from "react-router-dom";
+
+import Signup from './SignupPage';
+import Signin from './SigninPage';
+import Home from './home';
+import Edit from './Edit';
+import Barcode from './Barcode';
+import Profile from './Profile';
+import Receipt from './Receipt';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">   
+    <BrowserRouter>
+      <Link to="/">{Home}</Link>
+      <Link to="/home">{Home}</Link>
+      <Link to="/signup">{Signup}</Link>
+      <Link to="/signin">{Signin}</Link>
+      <Link to="/edit">{Edit}</Link>
+      <Link to="/barcode">{Barcode}</Link>
+      <Link to="/profile">{Profile}</Link>
+      <Link to="/receipt">{Receipt}</Link>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="home" element ={<Home />} /> 
+        <Route path="signup" element ={<Signup />} /> 
+        <Route path="signin" element ={<Signin />} />
+        <Route path="edit" element ={<Edit />} />
+        <Route path="barcode" element ={<Barcode />} />
+        <Route path="profile" element ={<Profile />} />
+        <Route path="receipt" element ={<Receipt />} /> 
+      </Routes>
+    </BrowserRouter>
+    {/* <Footer/> */}
     </div>
   );
 }

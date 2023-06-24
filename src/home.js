@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Footer';
 import reload from './images/reload.svg';
 import apple from "./images/apple.png";
-import salt from "./images/salt.png";
+import sauce from "./images/sauce.png";
 import cheese from "./images/cheese.png";
 
 const Home = () => {
@@ -21,6 +21,30 @@ const Home = () => {
 
     const progress = ((daysCloser) / totalDays) * 100;
 
+    const getTrackText = (daysUntilExpire) => {
+        if (daysUntilExpire === 1) {
+            return "EAT NOW";
+        } else if (daysUntilExpire === 0) {
+            return "EXPIRED";
+        } else if (daysUntilExpire <= 3) {
+            return "OKAY";
+        } else if (daysUntilExpire > 3 || daysUntilExpire === null) {
+            return "GOOD";
+        }
+    };
+    
+    const getTrackTextColor = (daysUntilExpire) => {
+        if (daysUntilExpire === 1) {
+            return "orange";
+        } else if (daysUntilExpire === 0) {
+            return "red";
+        } else if (daysUntilExpire <= 3) {
+            return "yellow";
+        } else if (daysUntilExpire > 3 || daysUntilExpire === null) {
+            return "green";
+        }
+    };
+    
     return (
         <div className='home-page'>
             <div className="head">
@@ -43,20 +67,28 @@ const Home = () => {
             <div className="content">
                 <button className="item">
                     <div className="column icon"><img src={apple} alt="apple" /></div>
-                    <div className="column item-text"><p className="item-head">Apple</p><p className="item-subhead">Days until Expire: 1</p></div>
-                    <div className="column track-text">EAT<br/>NOW</div>
+                    <div className="column item-text">
+                        <p className="item-head">Apple</p>
+                        <p className="item-subhead">Days until Expire: 1<br /> 2 units</p>
+                    </div>
+                    <div className="column track-text" style={{ color: getTrackTextColor(1) }}>{getTrackText(1)}</div>
                 </button>
                 <button className="item">
-                    <div className="column icon"><img src={salt} alt="salt" /></div>
-                    <div className="column item-text"><p className="item-head">Salt</p><p className="item-subhead">Days until Expire: -</p></div>
-                    <div className="column track-text">GOOD</div>
+                    <div className="column icon"><img src={sauce} alt="sauce" /></div>
+                    <div className="column item-text">
+                        <p className="item-head">Sauce</p>
+                        <p className="item-subhead">Days until Expire: 5<br /> 200 gm</p>
+                    </div>
+                    <div className="column track-text" style={{ color: getTrackTextColor(5) }}>{getTrackText(5)}</div>
                 </button>
                 <button className="item">
                     <div className="column icon"><img src={cheese} alt="cheese" /></div>
-                    <div className="column item-text"><p className="item-head">Cheese</p><p className="item-subhead">Days until Expire: 0</p></div>
-                    <div className="column track-text">EXPIRED</div>
-                </button>  
-             
+                    <div className="column item-text">
+                        <p className="item-head">Cheese</p>
+                        <p className="item-subhead">Days until Expire: 0<br /> 2 units</p>
+                    </div>
+                    <div className="column track-text" style={{ color: getTrackTextColor(0) }}>{getTrackText(0)}</div>
+                </button>
             </div>
             <Footer />
         </div >

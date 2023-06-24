@@ -1,0 +1,282 @@
+{
+    "ocr_type": "receipts",
+    "request_id": "P_206.207.50.254_lja6h5d3_ydj",
+    "ref_no": "oct_python_123",
+    "file_name": "receipt-3.png",
+    "request_received_on": 1687621849960,
+    "success": true,
+    "image_width": 360,
+    "image_height": 863,
+    "image_rotation": 0,
+    "recognition_completed_on": 1687621850297,
+    "receipts": [
+        {
+            "merchant_name": "WHOLESALE GREEN TOWN # 5208",
+            "merchant_address": "1212, Pine Wood Plaza Dr",
+            "merchant_phone": null,
+            "merchant_website": null,
+            "merchant_tax_reg_no": null,
+            "merchant_company_reg_no": null,
+            "region": null,
+            "mall": null,
+            "country": "US",
+            "state": "CA",
+            "city": "Green Town",
+            "zip": "34343",
+            "receipt_no": "5208 208 256 208",
+            "date": "2021-08-19",
+            "time": "17:58",
+            "items": [
+                {
+                    "amount": 1.67,
+                    "category": null,
+                    "description": "E3081064 BANANAS",
+                    "flags": " E",
+                    "qty": null,
+                    "remarks": null,
+                    "tags": null,
+                    "unitPrice": null
+                },
+                {
+                    "amount": 122.34,
+                    "category": null,
+                    "description": "A7073705 Bluetooth Care",
+                    "flags": " A",
+                    "qty": null,
+                    "remarks": null,
+                    "tags": null,
+                    "unitPrice": null
+                },
+                {
+                    "amount": 422.99,
+                    "category": null,
+                    "description": "8143739 Dinning Table",
+                    "flags": " S",
+                    "qty": null,
+                    "remarks": null,
+                    "tags": null,
+                    "unitPrice": null
+                },
+                {
+                    "amount": 9.99,
+                    "category": null,
+                    "description": "8523605 Wine Bottle",
+                    "flags": " E",
+                    "qty": null,
+                    "remarks": null,
+                    "tags": null,
+                    "unitPrice": null
+                },
+                {
+                    "amount": 19.9,
+                    "category": null,
+                    "description": "8831466 Beer Case",
+                    "flags": " E",
+                    "qty": null,
+                    "remarks": null,
+                    "tags": null,
+                    "unitPrice": null
+                }
+            ],
+            "currency": "USD",
+            "total": 679.56,
+            "subtotal": 576.89,
+            "tax": 102.67,
+            "service_charge": null,
+            "tip": null,
+            "payment_method": "credit_card",
+            "payment_details": null,
+            "credit_card_type": null,
+            "credit_card_number": "9999",
+            "ocr_text": "       COTCO\n               WHOLESALE\n               GREEN TOWN # 5208\n            1212, Pine Wood Plaza Dr\n             Green Town, CA 34343\n B7 Member 585635184442\n E      3081064 BANANAS                  1.67 E\n A      7073705 Bluetooth Care         122.34 A\n        8143739 Dinning Table         422.99 S\n        8523605 Wine Bottle              9.99 E\n        8831466 Beer Case               19.90 E\n            SUBTOTAL                   576.89\n            TAX                        102.67\n       **** TOTAL                     679.56\n XXXXXXXXXXXX9999                     CHIP Read\n AID:   L8G716KSFKGB\n Seq#   463882    APP#: MA9Z\n VISA   Resp: APPROVED\n Tran ID#:   2577049117\n Merchant ID: 052587\n APPROVED Purchase\n AMOUNT 679.56\n 08/19/2021 17:58:17 5208 208 256 208\n       VISA                            679.56\n       CHANGE                            0.00\n S TAX 9.75%                             89.99\n E TAX 7.75%                              8.78\n A TAX 2.75%                              3.90\n TOTAL TAX                              102.67\n TOTAL NUMBER OF ITEMS SOLD = 5\n 08/19/2021 17:58:17 5208 208 256 208\n              205320144430711570000\n OP: 208 NAME: SCO LANE #208\n                 Thank You.\n              Please Come Again\n Whse: 5208 Trm: 208 Trn: 256 OP: 208\n   Items Sold: 5\n   B7 08/19/2021 17:58:17",
+            "ocr_confidence": 97.35,
+            "width": 337,
+            "height": 829,
+            "avg_char_width": 7.3573,
+            "avg_line_height": 12.4556,
+            "conf_amount": 74,
+            "source_locations": {
+                "date": [
+                    [
+                        {
+                            "y": 494,
+                            "x": 2
+                        },
+                        {
+                            "y": 494,
+                            "x": 148
+                        },
+                        {
+                            "y": 507,
+                            "x": 148
+                        },
+                        {
+                            "y": 507,
+                            "x": 2
+                        }
+                    ]
+                ],
+                "total": [
+                    [
+                        {
+                            "y": 313,
+                            "x": 274
+                        },
+                        {
+                            "y": 312,
+                            "x": 320
+                        },
+                        {
+                            "y": 327,
+                            "x": 320
+                        },
+                        {
+                            "y": 328,
+                            "x": 274
+                        }
+                    ]
+                ],
+                "receipt_no": [
+                    [
+                        {
+                            "y": 494,
+                            "x": 151
+                        },
+                        {
+                            "y": 494,
+                            "x": 275
+                        },
+                        {
+                            "y": 507,
+                            "x": 275
+                        },
+                        {
+                            "y": 507,
+                            "x": 151
+                        }
+                    ]
+                ],
+                "credit_card_number": [
+                    [
+                        {
+                            "y": 350,
+                            "x": -8
+                        },
+                        {
+                            "y": 350,
+                            "x": 358
+                        },
+                        {
+                            "y": 362,
+                            "x": 358
+                        },
+                        {
+                            "y": 362,
+                            "x": -8
+                        }
+                    ]
+                ],
+                "subtotal": [
+                    [
+                        {
+                            "y": 283,
+                            "x": 275
+                        },
+                        {
+                            "y": 283,
+                            "x": 322
+                        },
+                        {
+                            "y": 295,
+                            "x": 322
+                        },
+                        {
+                            "y": 295,
+                            "x": 275
+                        }
+                    ]
+                ],
+                "merchant_name": [
+                    [
+                        {
+                            "y": 124,
+                            "x": 105
+                        },
+                        {
+                            "y": 124,
+                            "x": 248
+                        },
+                        {
+                            "y": 138,
+                            "x": 248
+                        },
+                        {
+                            "y": 138,
+                            "x": 105
+                        }
+                    ]
+                ],
+                "doc": [
+                    [
+                        {
+                            "y": -14,
+                            "x": -8
+                        },
+                        {
+                            "y": -14,
+                            "x": 361
+                        },
+                        {
+                            "y": 897,
+                            "x": 361
+                        },
+                        {
+                            "y": 897,
+                            "x": -8
+                        }
+                    ]
+                ],
+                "tax": [
+                    [
+                        {
+                            "y": 600,
+                            "x": 5
+                        },
+                        {
+                            "y": 600,
+                            "x": 75
+                        },
+                        {
+                            "y": 612,
+                            "x": 75
+                        },
+                        {
+                            "y": 613,
+                            "x": 5
+                        }
+                    ]
+                ],
+                "merchant_address": [
+                    [
+                        {
+                            "y": 142,
+                            "x": 84
+                        },
+                        {
+                            "y": 142,
+                            "x": 268
+                        },
+                        {
+                            "y": 156,
+                            "x": 268
+                        },
+                        {
+                            "y": 156,
+                            "x": 84
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

@@ -4,16 +4,48 @@ import camera from './images/camera.svg';
 
 const TabBar = () => {
     const [activeTab, setActiveTab] = useState(1);
+    const [showOptions, setShowOptions] = useState(false);
+    const [capturedImage, setCapturedImage] = useState(null);
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleTabClick = (tabNumber) => {
         setActiveTab(tabNumber);
     };
-    const [showOptions, setShowOptions] = useState(false);
-    const [capturedImage, setCapturedImage] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle the form submission
+        if (selectedFile) {
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            fetch('http://localhost:8000/scan_receipt', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    const fileData = new FormData();
+                    const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+                    fileData.append('file', blob, 'data.json');
+
+                    fetch('/upload', {
+                        method: 'POST',
+                        body: fileData,
+                    })
+                        .then((response) => response.text())
+                        .then((data) => {
+                            console.log(data);
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        });
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
     };
 
     const handleCameraClick = () => {
@@ -37,6 +69,7 @@ const TabBar = () => {
         };
 
         reader.readAsDataURL(file);
+        setSelectedFile(file); // Set the selected file here
     };
 
     const handleImageUpload = (e) => {
@@ -48,6 +81,7 @@ const TabBar = () => {
         };
 
         reader.readAsDataURL(file);
+        setSelectedFile(file); // Set the selected file here
     };
 
     return (
@@ -74,7 +108,7 @@ const TabBar = () => {
             </div>
             <div className="tab-content">
                 {activeTab === 1 && <div>
-                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%'}}>Upload Image</p>
+                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%' }}>Upload Image</p>
                     <form onSubmit={handleSubmit}>
                         <button className="camera" onClick={handleCameraClick}>
                             {capturedImage ? (
@@ -118,7 +152,7 @@ const TabBar = () => {
                         <a href="/edit" className="signin-text">Go Back</a>
                     </form></div>}
                 {activeTab === 2 && <div>
-                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%'}}>Paste Text</p>
+                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%' }}>Paste Text</p>
                     <form onSubmit={handleSubmit}>
                         <button className="camera">
                             <img src={camera} alt="camera" />
@@ -127,7 +161,7 @@ const TabBar = () => {
                         <a href="/edit" className="signin-text">Go Back</a>
                     </form></div>}
                 {activeTab === 3 && <div>
-                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%'}}>Upload PDF</p>
+                    <p className="bar-head" style={{ marginBottom: '4%', marginTop: '12%' }}>Upload PDF</p>
                     <form onSubmit={handleSubmit}>
                         <button className="camera">
                             <img src={camera} alt="camera" />

@@ -54,7 +54,19 @@ const Home = () => {
     };
 
     const handleDelete = (index) => {
-        // Handle delete button click logic here
+        // const name = index.trim();
+        if (index) {
+            fetch(`/cancel/${index}`, {
+                method: 'DELETE',
+            })
+                .then((response) => response.text())
+                .then((data) => {
+                    console.log(data); // Success message from the backend
+                })
+                .catch((error) => {
+                    console.error(error); // Error message if the cancel request fails
+                });
+        }
         console.log("Delete item at index:", index);
     };
 

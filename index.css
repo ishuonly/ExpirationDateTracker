@@ -1,0 +1,33 @@
+body {
+  background: black;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+form > * {
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type="file"],
+input[type="text"] {
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#expiryResult {
+  margin-top: 10px;
+}

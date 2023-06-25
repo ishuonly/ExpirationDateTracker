@@ -8,6 +8,7 @@ import Signin from './SigninPage';
 import Home from './home';
 import Edit from './Edit';
 import Barcode from './Barcode';
+import Fresh from './Fresh';
 import Profile from './Profile';
 import Receipt from './Receipt';
 
@@ -21,6 +22,7 @@ function App() {
       <Link to="/signup">{Signup}</Link>
       <Link to="/signin">{Signin}</Link>
       <Link to="/edit">{Edit}</Link>
+      <Link to="/fresh">{Fresh}</Link>
       <Link to="/barcode">{Barcode}</Link>
       <Link to="/profile">{Profile}</Link>
       <Link to="/receipt">{Receipt}</Link>
@@ -31,6 +33,7 @@ function App() {
         <Route path="signin" element ={<Signin />} />
         <Route path="edit" element ={<Edit />} />
         <Route path="barcode" element ={<Barcode />} />
+        <Route path="fresh" element ={<Fresh />} />
         <Route path="profile" element ={<Profile />} />
         <Route path="receipt" element ={<Receipt />} /> 
       </Routes>

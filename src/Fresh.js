@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Footer';
 import camera from './images/camera.svg';
 
-const Barcode = () => {
+const Fresh = () => {
     const [showOptions, setShowOptions] = useState(false);
     const [capturedImage, setCapturedImage] = useState(null);
 
@@ -49,10 +49,10 @@ const Barcode = () => {
     return (
         <div className='barcode'>
             <div className="head">
-                <div className="head-text">Bar Code</div>
+                <div className="head-text">Fresh Produce</div>
             </div>
             <div className="bar-cont">
-                <p className="bar-head">Scan Your Bar Code</p>
+                <p className="bar-head">Scan Your Food</p>
                 <form onSubmit={handleSubmit}>
                     <button className="camera" onClick={handleCameraClick}>
                         {capturedImage ? (
@@ -101,4 +101,4 @@ const Barcode = () => {
     );
 };
 
-export default Barcode;
+export default Fresh;

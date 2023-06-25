@@ -1,5 +1,3 @@
-/* Common styles for all screen sizes */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
 
 body {
@@ -31,10 +29,10 @@ body {
   background: #E3D6B1;
   color: #696969;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   border: none;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -133,13 +131,13 @@ body {
 
 .content {
   margin-top: 70%;
-  margin-bottom: 25%;
+  margin-bottom: 0%;
 }
 
 .item {
-  margin: 5% 3%;
+  margin: 5% 0%;
   display: flex;
-  width: 94%;
+  width: 85vw;
   height: 13vh;
   /* background-color: #428F6F; */
   color: #fff;
@@ -151,7 +149,7 @@ body {
 .column {
   flex: 1;
   text-align: center;
-  margin-right: 7%;
+  margin-right: 0;
   margin-left: 0;
 }
 
@@ -160,12 +158,43 @@ body {
 }
 
 .icon {
-  margin-right: 5%;
+  margin-right: -5%;
+  margin-top: 6%;
+}
+
+.icon-items {
+  width: 60%;
+  height: 100%;
+}
+
+.item-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.delete {
+  display: inline-block;
+  background: none;
+  border: none;
+  width: 7%;
+  height: 7%;
+  margin: 0;
+  padding: 0;
+  margin-left: 3%;
+  margin-bottom: 0%;
+}
+
+.delete-icon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .item-head {
   color: #000;
-  font-size: 250%;
+  font-size: 200%;
   font-family: Inter;
   font-weight: 700;
   text-align: left;
@@ -183,30 +212,15 @@ body {
 }
 
 .track-text {
-  font-size: 170%;
+  color: #b60000;
+  font-size: 150%;
   font-family: Inter;
   font-weight: 700;
   text-align: center;
   margin-bottom: 0;
-  margin-top: 10%;
+  margin-top: 12%;
   margin-right: 0;
-  margin-left: 0;
-}
 
-.track-text.orange {
-  color: orange;
-}
-
-.track-text.red {
-  color: red;
-}
-
-.track-text.yellow {
-  color: yellow;
-}
-
-.track-text.green {
-  color: green;
 }
 
 .footer {
@@ -259,7 +273,9 @@ body {
 .camera {
   background-color: #DF887959;
   border: none;
-  padding: 30%;
+  padding: 0%;
+  width: 80vw;
+  height: 35vh;
 }
 
 .save-btn {
@@ -269,12 +285,12 @@ body {
   text-align: center;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 5%;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 20px;
   box-sizing: border-box;
-  width: 70%;
+  width: 40%;
+  margin-left: 10%;
 }
 
 .rec-cont {
@@ -311,8 +327,13 @@ body {
   display: block;
 }
 
+.edit {
+  max-height: 100vh;
+}
+
+
 .edit-cont {
-  margin-top: 45%;
+  margin-top: 40%;
   /* margin-bottom: 25%; */
   align-items: center;
   width: 85%;
@@ -321,7 +342,7 @@ body {
 
 .field-name {
   color: #696969;
-  font-size: 130%;
+  font-size: 100%;
   font-family: Inter;
   font-weight: 500;
   text-align: left;
@@ -329,40 +350,106 @@ body {
   margin-top: 0;
 }
 
+.btn {
+  border-radius: 10px;
+  background: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  display: inline-block;
+  width: 20%;
+  height: 20%;
+}
+
 .scan-btn {
   border-radius: 10px;
-  background: #428F6F;
+  background: none;
   color: #FFF;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 5%;
-  margin-bottom: 5%;
   border: none;
-  padding: 10px 20px;
   box-sizing: border-box;
+  margin-bottom: 5%;
+  display: inline-block;
+  width: 20%;
+  height: 20%;
+  margin-right: 15%;
+}
+
+.icon-edit {
+  display: inline-block;
   width: 100%;
+  height: 100%;
+  fill: #428F6F;
 }
 
-.barcode {
-  margin-top: 35%;
+.edit-facts {
+  text-align: left;
+  background-color: #DF8879B2;
+  color: white;
+  padding: 2%;
+  font-size: 90%;
 }
 
-.input-field {
+.fact-head {
+  color: #DF8879;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.profile-cont {
+  margin-top: 45%;
+  /* margin-bottom: 25%; */
+  align-items: center;
+  width: 90%;
+  margin-left: 3%;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-pic {
+  margin-right: 10%;
+  width: 30%;
+  height: 30%;
+  margin-left: 8%;
+}
+
+.user-text {
+  text-align: left;
+}
+
+.p-btns1 {
+  border: none;
+  background-color: #DF8879B2;
+  border-radius: 10px;
+  padding: 3% 10%;
+  margin: 5%;
+  margin-bottom: 10%;
+  margin-right: 2%;
+}
+
+.p-btns {
+  border: none;
+  border-radius: 10px;
   background: #E3D6B1;
-  color: #696969;
+  padding: 5% 8%;
+  margin: 2.5% 6%;
+  width: 35%;
   text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  border: none;
-  margin-bottom: 7%;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 5px;
+  align-items: center;
 }
 
-.check-btn {
+.alt-btn {
   border-radius: 10px;
   background: #428F6F;
   color: #FFF;
@@ -370,673 +457,28 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin-top: 5%;
-  margin-bottom: 5%;
-  border: none;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.result {
-  color: #000;
-  font-size: 36px;
-  font-family: Inter;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 5%;
-  margin-top: 10%;
-}
-
-.result-text {
-  color: #373737;
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 5%;
-}
-
-.home-btn {
-  border-radius: 10px;
-  background: #428F6F;
-  color: #FFF;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10%;
-  margin-bottom: 5%;
   border: none;
   padding: 10px 20px;
   box-sizing: border-box;
   width: 40%;
+  margin-bottom: 3%;
 }
 
-/* Media Queries */
-
-/* Small devices (landscape phones, 576px and up) */
-@media only screen and (min-width: 576px) {
-  .signup-page {
-    padding: 10%;
-  }
-
-  .signup {
-    font-size: 48px;
-    margin-bottom: 10%;
-    margin-top: 10%;
-  }
-
-  .fields {
-    font-size: 24px;
-    margin-bottom: 5%;
-  }
-
-  .signup-btn {
-    font-size: 24px;
-    margin-top: 10%;
-    margin-bottom: 5%;
-  }
-
-  .already {
-    font-size: 20px;
-    margin-top: 15px;
-  }
-
-  .home-page {
-    margin-top: 20%;
-    margin-bottom: 10%;
-  }
-
-  .head {
-    padding: 3%;
-  }
-
-  .date {
-    font-size: 400%;
-  }
-
-  .progress {
-    width: 500px;
-  }
-
-  .progress p {
-    margin-top: 15px;
-    font-size: 18px;
-  }
-
-  .content {
-    margin-top: 40%;
-    margin-bottom: 15%;
-  }
-
-  .item {
-    margin: 3% 2%;
-    height: 10vh;
-  }
-
-  .item-head {
-    font-size: 200%;
-    margin-top: 10%;
-  }
-
-  .item-subhead {
-    font-size: 80%;
-  }
-
-  .item-f {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-  .add {
-    margin-right: 10%;
-    margin-left: 10%;
-  }
-
-  .head-text {
-    font-size: 400%;
-    margin-top: 5%;
-  }
-
-  .bar-cont {
-    margin-top: 35%;
-  }
-
-  .bar-head {
-    font-size: 48px;
-  }
-
-  .save-btn {
-    font-size: 24px;
-    margin-top: 5%;
-    margin-bottom: 3%;
-    width: 50%;
-  }
-
-  .rec-cont {
-    margin-top: 20%;
-  }
-
-  .tab-bar-head {
-    margin-bottom: 2%;
-  }
-
-  .edit-cont {
-    margin-top: 25%;
-  }
-
-  .field-name {
-    font-size: 120%;
-    margin-top: 5%;
-  }
-
-  .scan-btn {
-    font-size: 24px;
-    margin-top: 5%;
-    margin-bottom: 3%;
-  }
-
-  .barcode {
-    margin-top: 20%;
-  }
-
-  .input-field {
-    font-size: 24px;
-    margin-bottom: 3%;
-  }
-
-  .check-btn {
-    font-size: 24px;
-    margin-top: 3%;
-    margin-bottom: 3%;
-  }
-
-  .result {
-    font-size: 48px;
-    margin-bottom: 3%;
-    margin-top: 10%;
-  }
-
-  .result-text {
-    font-size: 20px;
-    margin-bottom: 3%;
-  }
-
-  .home-btn {
-    font-size: 24px;
-    margin-top: 5%;
-    margin-bottom: 3%;
-    width: 30%;
-  }
+.option-btn {
+  border: none;
+  margin: 2%;
+  padding: 1% 2%;
+  background-color: #e3d6b1a8;
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .signup-page {
-    padding: 8%;
-  }
-
-  .signup {
-    font-size: 54px;
-    margin-bottom: 8%;
-    margin-top: 8%;
-  }
-
-  .fields {
-    font-size: 28px;
-    margin-bottom: 4%;
-  }
-
-  .signup-btn {
-    font-size: 28px;
-    margin-top: 8%;
-    margin-bottom: 4%;
-  }
-
-  .already {
-    font-size: 22px;
-    margin-top: 18px;
-  }
-
-  .home-page {
-    margin-top: 15%;
-    margin-bottom: 8%;
-  }
-
-  .head {
-    padding: 2%;
-  }
-
-  .date {
-    font-size: 500%;
-  }
-
-  .progress {
-    width: 600px;
-  }
-
-  .progress p {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-
-  .content {
-    margin-top: 30%;
-    margin-bottom: 12%;
-  }
-
-  .item {
-    margin: 2% 1%;
-    height: 9vh;
-  }
-
-  .item-head {
-    font-size: 250%;
-    margin-top: 9%;
-  }
-
-  .item-subhead {
-    font-size: 85%;
-  }
-
-  .item-f {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-  .add {
-    margin-right: 8%;
-    margin-left: 8%;
-  }
-
-  .head-text {
-    font-size: 450%;
-    margin-top: 4%;
-  }
-
-  .bar-cont {
-    margin-top: 30%;
-  }
-
-  .bar-head {
-    font-size: 44px;
-  }
-
-  .save-btn {
-    font-size: 28px;
-    margin-top: 4%;
-    margin-bottom: 2%;
-    width: 45%;
-  }
-
-  .rec-cont {
-    margin-top: 15%;
-  }
-
-  .tab-bar-head {
-    margin-bottom: 1%;
-  }
-
-  .edit-cont {
-    margin-top: 20%;
-  }
-
-  .field-name {
-    font-size: 115%;
-    margin-top: 4%;
-  }
-
-  .scan-btn {
-    font-size: 28px;
-    margin-top: 4%;
-    margin-bottom: 2%;
-  }
-
-  .barcode {
-    margin-top: 15%;
-  }
-
-  .input-field {
-    font-size: 28px;
-    margin-bottom: 2%;
-  }
-
-  .check-btn {
-    font-size: 28px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-  }
-
-  .result {
-    font-size: 54px;
-    margin-bottom: 2%;
-    margin-top: 8%;
-  }
-
-  .result-text {
-    font-size: 22px;
-    margin-bottom: 2%;
-  }
-
-  .home-btn {
-    font-size: 28px;
-    margin-top: 4%;
-    margin-bottom: 2%;
-    width: 25%;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .signup-page {
-    padding: 6%;
-  }
-
-  .signup {
-    font-size: 60px;
-    margin-bottom: 6%;
-    margin-top: 6%;
-  }
-
-  .fields {
-    font-size: 32px;
-    margin-bottom: 3%;
-  }
-
-  .signup-btn {
-    font-size: 32px;
-    margin-top: 6%;
-    margin-bottom: 3%;
-  }
-
-  .already {
-    font-size: 24px;
-    margin-top: 22px;
-  }
-
-  .home-page {
-    margin-top: 10%;
-    margin-bottom: 6%;
-  }
-
-  .head {
-    padding: 1%;
-  }
-
-  .date {
-    font-size: 600%;
-  }
-
-  .progress {
-    width: 700px;
-  }
-
-  .progress p {
-    margin-top: 25px;
-    font-size: 22px;
-  }
-
-  .content {
-    margin-top: 20%;
-    margin-bottom: 10%;
-  }
-
-  .item {
-    margin: 1% 0.5%;
-    height: 8vh;
-  }
-
-  .item-head {
-    font-size: 300%;
-    margin-top: 8%;
-  }
-
-  .item-subhead {
-    font-size: 70%;
-  }
-
-  .item-f {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-  .add {
-    margin-right: 6%;
-    margin-left: 6%;
-  }
-
-  .head-text {
-    font-size: 500%;
-    margin-top: 3%;
-  }
-
-  .bar-cont {
-    margin-top: 25%;
-  }
-
-  .bar-head {
-    font-size: 40px;
-  }
-
-  .save-btn {
-    font-size: 32px;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    width: 40%;
-  }
-
-  .rec-cont {
-    margin-top: 10%;
-  }
-
-  .tab-bar-head {
-    margin-bottom: 0.5%;
-  }
-
-  .edit-cont {
-    margin-top: 15%;
-  }
-
-  .field-name {
-    font-size: 110%;
-    margin-top: 3%;
-  }
-
-  .scan-btn {
-    font-size: 32px;
-    margin-top: 3%;
-    margin-bottom: 1%;
-  }
-
-  .barcode {
-    margin-top: 10%;
-  }
-
-  .input-field {
-    font-size: 32px;
-    margin-bottom: 1%;
-  }
-
-  .check-btn {
-    font-size: 32px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-  }
-
-  .result {
-    font-size: 60px;
-    margin-bottom: 1%;
-    margin-top: 6%;
-  }
-
-  .result-text {
-    font-size: 24px;
-    margin-bottom: 1%;
-  }
-
-  .home-btn {
-    font-size: 32px;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    width: 20%;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .signup-page {
-    padding: 4%;
-  }
-
-  .signup {
-    font-size: 66px;
-    margin-bottom: 4%;
-    margin-top: 4%;
-  }
-
-  .fields {
-    font-size: 36px;
-    margin-bottom: 2%;
-  }
-
-  .signup-btn {
-    font-size: 36px;
-    margin-top: 4%;
-    margin-bottom: 2%;
-  }
-
-  .already {
-    font-size: 26px;
-    margin-top: 26px;
-  }
-
-  .home-page {
-    margin-top: 6%;
-    margin-bottom: 4%;
-  }
-
-  .head {
-    padding: 0.8%;
-  }
-
-  .date {
-    font-size: 700%;
-  }
-
-  .progress {
-    width: 800px;
-  }
-
-  .progress p {
-    margin-top: 30px;
-    font-size: 24px;
-  }
-
-  .content {
-    margin-top: 10%;
-    margin-bottom: 8%;
-  }
-
-  .item {
-    margin: 0.8% 0.4%;
-    height: 7vh;
-  }
-
-  .item-head {
-    font-size: 350%;
-    margin-top: 7%;
-  }
-
-  .item-subhead {
-    font-size: 60%;
-  }
-
-  .item-f {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-  .add {
-    margin-right: 4%;
-    margin-left: 4%;
-  }
-
-  .head-text {
-    font-size: 550%;
-    margin-top: 2%;
-  }
-
-  .bar-cont {
-    margin-top: 20%;
-  }
-
-  .bar-head {
-    font-size: 36px;
-  }
-
-  .save-btn {
-    font-size: 36px;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    width: 35%;
-  }
-
-  .rec-cont {
-    margin-top: 5%;
-  }
-
-  .tab-bar-head {
-    margin-bottom: 0.4%;
-  }
-
-  .edit-cont {
-    margin-top: 10%;
-  }
-
-  .field-name {
-    font-size: 105%;
-    margin-top: 2%;
-  }
-
-  .scan-btn {
-    font-size: 36px;
-    margin-top: 2%;
-    margin-bottom: 1%;
-  }
-
-  .barcode {
-    margin-top: 5%;
-  }
-
-  .input-field {
-    font-size: 36px;
-    margin-bottom: 1%;
-  }
-
-  .check-btn {
-    font-size: 36px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-  }
-
-  .result {
-    font-size: 66px;
-    margin-bottom: 1%;
-    margin-top: 4%;
-  }
-
-  .result-text {
-    font-size: 26px;
-    margin-bottom: 1%;
-  }
-
-  .home-btn {
-    font-size: 36px;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    width: 15%;
-  }
+.footer-link{
+  display: block;
+  width: 100vw;
+  border: none;
+  margin-top: 1%;
+  height: 4vh;
+  font-size: 100%;
+  /* background-color: #428F6F; */
+  background: none;
+  color: black;
 }

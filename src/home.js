@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import Footer from './Footer';
+import delete1 from "./images/delete2.png";
 import reload from './images/reload.svg';
 import apple from "./images/apple.png";
 import sauce from "./images/sauce.png";
 import cheese from "./images/cheese.png";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const handleReload = () => {
@@ -15,6 +17,12 @@ const Home = () => {
         month: 'short',
         day: 'numeric',
     });
+
+    const items = [
+        { name: "Apple", daysUntilExpire: 1, units: 2, icon: apple },
+        { name: "Sauce", daysUntilExpire: 5, units: 200, icon: sauce },
+        { name: "Cheese", daysUntilExpire: 0, units: 2, icon: cheese }
+    ];
 
     const daysCloser = 5;
     const totalDays = 7;
@@ -32,7 +40,7 @@ const Home = () => {
             return "GOOD";
         }
     };
-    
+
     const getTrackTextColor = (daysUntilExpire) => {
         if (daysUntilExpire === 1) {
             return "orange";
@@ -44,13 +52,21 @@ const Home = () => {
             return "green";
         }
     };
-    
+
+    const handleDelete = (index) => {
+        // Handle delete button click logic here
+        console.log("Delete item at index:", index);
+    };
+
     return (
         <div className='home-page'>
             <div className="head">
-                <button className='reload-button' onClick={handleReload}>
-                    <img src={reload} alt='Reload' />
-                </button>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <button className='reload-button' onClick={handleReload}>
+                        <img src={reload} alt='Reload' />
+                    </button>
+                </Link>
+
                 <div className="date">{currentDate}</div>
                 <div className='progress'>
                     <div
@@ -65,33 +81,26 @@ const Home = () => {
                 <p className='progress-text'>{daysCloser} days closer to your goal</p>
             </div>
             <div className="content">
-                <button className="item">
-                    <div className="column icon"><img src={apple} alt="apple" /></div>
-                    <div className="column item-text">
-                        <p className="item-head">Apple</p>
-                        <p className="item-subhead">Days until Expire: 1<br /> 2 units</p>
+                {items.map((item, index) => (
+                    <div key={index}>
+                        <Link to="/edit" className='item-link' style={{ textDecoration: 'none' }}>
+                            <button className="item">
+                                <div className="column icon"><img src={item.icon} alt={item.name} className='icon-items' /></div>
+                                <div className="column item-text">
+                                    <p className="item-head">{item.name}</p>
+                                    <p className="item-subhead">Days until Expire: {item.daysUntilExpire}<br /> {item.units} units</p>
+                                </div>
+                                <div className="column track-text" style={{ color: getTrackTextColor(item.daysUntilExpire) }}>
+                                    {getTrackText(item.daysUntilExpire)}<br />
+                                </div>
+                            </button>
+                        </Link>
+                        <button className="delete" onClick={() => handleDelete(index)}><img src={delete1} alt="delete1" className="delete-icon" /></button>
                     </div>
-                    <div className="column track-text" style={{ color: getTrackTextColor(1) }}>{getTrackText(1)}</div>
-                </button>
-                <button className="item">
-                    <div className="column icon"><img src={sauce} alt="sauce" /></div>
-                    <div className="column item-text">
-                        <p className="item-head">Sauce</p>
-                        <p className="item-subhead">Days until Expire: 5<br /> 200 gm</p>
-                    </div>
-                    <div className="column track-text" style={{ color: getTrackTextColor(5) }}>{getTrackText(5)}</div>
-                </button>
-                <button className="item">
-                    <div className="column icon"><img src={cheese} alt="cheese" /></div>
-                    <div className="column item-text">
-                        <p className="item-head">Cheese</p>
-                        <p className="item-subhead">Days until Expire: 0<br /> 2 units</p>
-                    </div>
-                    <div className="column track-text" style={{ color: getTrackTextColor(0) }}>{getTrackText(0)}</div>
-                </button>
+                ))}
             </div>
             <Footer />
-        </div >
+        </div>
     );
 };
 

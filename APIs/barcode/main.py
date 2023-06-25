@@ -12,8 +12,9 @@ import uvicorn
 import re
 import datetime
 
-os.environ["OPENAI_API_KEY"] = "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"
-api="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"
+#Shervin doesn't want his api key leaked again
+os.environ["OPENAI_API_KEY"] = "ASK SHERVIN"
+api="ASK SHERVIN"
 
 # Custom built LLM 1
 llm1 = OpenAI(openai_api_key=api, temperature=0.7)

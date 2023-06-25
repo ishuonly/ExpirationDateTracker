@@ -2,7 +2,7 @@
 WaffleHack 2023
 
 ### YouTube Video
-[![Alt text](https://img.youtube.com/vi/I03sSvLelQA/0.jpg)](https://youtu.be/I03sSvLelQA)
+[![Alt text](https://img.youtube.com/vi/jXnWqMaLeRA/0.jpg)](https://youtu.be/jXnWqMaLeRA)
 
 ### Figma Link
 https://www.figma.com/file/ZH1gqgOhWrEb3ib4Np9LSO/Expiration-Date-Tracker?type=design&node-id=0-1&mode=design&t=hk9hC1kIkIWzJffx-0

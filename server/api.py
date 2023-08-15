@@ -1,3 +1,5 @@
+# Receipt scanner (Asprise OCR API)
+
 import requests
 import json
 from fastapi import FastAPI, UploadFile, File

@@ -1,6 +1,0 @@
-fastapi
-pyzbar
-Pillow
-langchain
-os
-uvicorn

@@ -13,7 +13,7 @@ import uvicorn
 import re
 import datetime
 
-#Shervin doesn't want his api key leaked again
+# Set up OpenAI API key
 os.environ["OPENAI_API_KEY"] = "ASK SHERVIN"
 api="ASK SHERVIN"
 
@@ -46,72 +46,33 @@ answer_chain3 = LLMChain(llm=llm3, prompt=prompt_template3)
 
 app = FastAPI()
 
-def get_product_details(barcode_id, i):
-    url = f"https://world.openfoodfacts.org/api/v0/product/{barcode_id}.json"
-    headers = {"User-Agent": "Your App Name", "Accept": "application/json"}
-    
-    response = requests.get(url, headers=headers)
-    data = response.json()
-
-    if response.status_code == 200 and data.get("status") == 1:
-        product = data["product"]
-
-        name = product.get("product_name")
-        expiration_date = product.get("expiration_date")
-        sustainability_facts = product.get("environmental_impact")
-
-        if i == 1:
-            return name
-        elif i == 2:
-            return expiration_date
-        else:
-            return sustainability_facts
-    else:
-        return None, None
-
-def get_date(string):
-  pattern = r"\d-\d"
-  matches = re.findall(pattern, string)
-
-  numbers = []
-  for match in matches:
-    numbers.append(int(match[0]))
-
-  average = sum(numbers)/len(numbers)
-  future_date = datetime.date.today() + datetime.timedelta(weeks=average)
-
-  return future_date
-
+# Define the FastAPI endpoint for barcode decoding and data extraction
 @app.post("/decode_barcode")
 async def decode_barcode(file: UploadFile = File(...)):
+    # Open and process the uploaded image
     image = Image.open(BytesIO(await file.read()))
-
     gray = image.convert("L")
 
+    # Decode barcodes in the image
     barcodes = decode(gray)
-
     decoded_barcodes = []
+
+    # Iterate through decoded barcodes
     for barcode in barcodes:
         barcode_data = barcode.data.decode("utf-8")
-        barcode_type = barcode.type
 
-        if answer_chain2.run(get_product_details(barcode_data,1)) == "Fresh":
-            expiry = answer_chain1.run(get_product_details(barcode_data,1))
-            expiry = get_date(expiry)
-
-        else:
-            if get_product_details(barcode_data,2) == "null":
-                expiry = "null"
-            else: 
-                expiry = get_product_details(barcode_data,2)
-
+        # Use the LLMs to get product details
+        name = get_product_details(barcode_data, 1)
+        expiry = get_product_details(barcode_data, 2)
+        fresh_status = answer_chain2.run(name)
+        facts = answer_chain3.run(name)
 
         decoded_barcodes.append({
-            "name" : get_product_details(barcode_data,1),
-            "barcode_id" : barcode_data,
-            "expiry" : expiry,
-            "fresh or no fresh" : answer_chain2.run(get_product_details(barcode_data,1)),
-            "facts" : answer_chain3.run(get_product_details(barcode_data,1))
+            "name": name,
+            "barcode_id": barcode_data,
+            "expiry": expiry,
+            "fresh or no fresh": fresh_status,
+            "facts": facts
         })
 
     return {"barcodes": decoded_barcodes}

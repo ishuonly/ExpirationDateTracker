@@ -1,21 +1,27 @@
+// Import necessary modules and resources
 import React, { useState } from 'react';
 import './App.css';
 import Footer from './Footer';
 import camera from './images/camera.svg';
 
+// Define the Barcode component
 const Barcode = () => {
+    // State to manage whether to show camera options and the captured image
     const [showOptions, setShowOptions] = useState(false);
     const [capturedImage, setCapturedImage] = useState(null);
 
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle the form submission
+        // Handle the form submission logic here
     };
 
+    // Handle click on camera button
     const handleCameraClick = () => {
         setShowOptions(true);
     };
 
+    // Handle click on camera options
     const handleOptionClick = (option) => {
         if (option === 'Use Mobile Camera') {
             document.getElementById('camera-input').click();
@@ -24,6 +30,7 @@ const Barcode = () => {
         }
     };
 
+    // Handle image capture from camera input
     const handleImageCapture = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -35,6 +42,7 @@ const Barcode = () => {
         reader.readAsDataURL(file);
     };
 
+    // Handle image upload from device input
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -101,4 +109,5 @@ const Barcode = () => {
     );
 };
 
+// Export the Barcode component
 export default Barcode;

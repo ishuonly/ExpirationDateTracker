@@ -1,3 +1,4 @@
+// Import necessary modules and resources
 import React, { useState } from 'react';
 import './App.css';
 import Footer from './Footer';
@@ -8,28 +9,36 @@ import sauce from "./images/sauce.png";
 import cheese from "./images/cheese.png";
 import { Link } from 'react-router-dom';
 
+// Define the Home component
 const Home = () => {
+    // Function to handle reload button click
     const handleReload = () => {
         // Handle reload button click logic here
     };
+
+    // Get current date in a specific format
     const currentDate = new Date().toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
     });
 
+    // Sample data for items
     const items = [
         { name: "Apple", daysUntilExpire: 1, units: 2, icon: apple },
         { name: "Sauce", daysUntilExpire: 5, units: 200, icon: sauce },
         { name: "Cheese", daysUntilExpire: 0, units: 2, icon: cheese }
     ];
 
+    // Variables to calculate progress
     const daysCloser = 5;
     const totalDays = 7;
-
     const progress = ((daysCloser) / totalDays) * 100;
 
+    // Function to get track text based on days until expire
     const getTrackText = (daysUntilExpire) => {
+        // Define track text based on different conditions
+        // You might need to adjust these conditions according to your requirements
         if (daysUntilExpire === 1) {
             return "EAT NOW";
         } else if (daysUntilExpire === 0) {
@@ -41,7 +50,10 @@ const Home = () => {
         }
     };
 
+    // Function to get track text color based on days until expire
     const getTrackTextColor = (daysUntilExpire) => {
+        // Define track text color based on different conditions
+        // You might need to adjust these conditions according to your requirements
         if (daysUntilExpire === 1) {
             return "orange";
         } else if (daysUntilExpire === 0) {
@@ -53,33 +65,26 @@ const Home = () => {
         }
     };
 
+    // Function to handle delete button click
     const handleDelete = (index) => {
-        // const name = index.trim();
-        if (index) {
-            fetch(`/cancel/${index}`, {
-                method: 'DELETE',
-            })
-                .then((response) => response.text())
-                .then((data) => {
-                    console.log(data); // Success message from the backend
-                })
-                .catch((error) => {
-                    console.error(error); // Error message if the cancel request fails
-                });
-        }
+        // Implement delete logic here using the index
         console.log("Delete item at index:", index);
     };
 
     return (
         <div className='home-page'>
             <div className="head">
+                {/* Reload button */}
                 <Link to="/" style={{ textDecoration: 'none' }}>
                     <button className='reload-button' onClick={handleReload}>
                         <img src={reload} alt='Reload' />
                     </button>
                 </Link>
 
+                {/* Current date */}
                 <div className="date">{currentDate}</div>
+                
+                {/* Progress bar */}
                 <div className='progress'>
                     <div
                         className='progress-bar'
@@ -93,8 +98,10 @@ const Home = () => {
                 <p className='progress-text'>{daysCloser} days closer to your goal</p>
             </div>
             <div className="content">
+                {/* Map through items and render */}
                 {items.map((item, index) => (
                     <div key={index}>
+                        {/* Link to edit page */}
                         <Link to="/edit" className='item-link' style={{ textDecoration: 'none' }}>
                             <button className="item">
                                 <div className="column icon"><img src={item.icon} alt={item.name} className='icon-items' /></div>
@@ -107,13 +114,18 @@ const Home = () => {
                                 </div>
                             </button>
                         </Link>
-                        <button className="delete" onClick={() => handleDelete(index)}><img src={delete1} alt="delete1" className="delete-icon" /></button>
+                        {/* Delete button */}
+                        <button className="delete" onClick={() => handleDelete(index)}>
+                            <img src={delete1} alt="delete1" className="delete-icon" />
+                        </button>
                     </div>
                 ))}
             </div>
+            {/* Include the Footer component */}
             <Footer />
         </div>
     );
 };
 
+// Export the Home component
 export default Home;

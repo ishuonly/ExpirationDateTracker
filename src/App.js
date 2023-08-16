@@ -18,14 +18,14 @@ function App() {
       {/* Set up routing with BrowserRouter */}
       <BrowserRouter>
         {/* Navigation links */}
-        <Link to="/">Home</Link>
+        {/*<Link to="/">Home</Link>
         <Link to="/signup">Signup</Link>
         <Link to="/signin">Signin</Link>
         <Link to="/edit">Edit</Link>
         <Link to="/barcode">Barcode</Link>
         <Link to="/fresh">Fresh</Link>
         <Link to="/profile">Profile</Link>
-        <Link to="/receipt">Receipt</Link>
+        <Link to="/receipt">Receipt</Link>*/}
 
         {/* Define routes */}
         <Routes>

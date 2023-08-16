@@ -51,8 +51,8 @@ const SigninPage = () => {
             placeholder='Password'
           />
         </div>
-        {/* Sign In button */}
-        <button type="submit" className="signup-btn">SIGN IN</button>
+        {/* Sign In button */}        
+        <button type="submit" className="signup-btn"><a href="/" className="signup-btn signup-txt">SIGN IN</a></button>
       </form>
       {/* Sign Up link */}
       <p className="already">

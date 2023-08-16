@@ -110,7 +110,7 @@ const Edit = () => {
                     </Link>
                     <br />
                     {/* Go back link */}
-                    <a href="/home" className="signin-text">Go Back</a>
+                    <a href="/" className="signin-text">Go Back</a>
                 </form>
             </div>
             <Footer />

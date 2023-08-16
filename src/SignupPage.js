@@ -69,7 +69,7 @@ const SignupPage = () => {
           />
         </div>
         {/* Sign Up button */}
-        <button type="submit" className="signup-btn">SIGN UP</button>
+        <button type="submit" className="signup-btn"><a href="/" className="signup-btn signup-txt">SIGN UP</a></button>
       </form>
       {/* Sign In link */}
       <p className="already">

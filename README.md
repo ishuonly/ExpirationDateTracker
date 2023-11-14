@@ -1,8 +1,8 @@
 # ExpirationDateTracker(WasteNot)
 WaffleHack 2023
 
-FoodTracker App
-FoodTracker is a web application designed to help users keep track of their food items, manage expiration dates, and make informed decisions about their groceries. The app includes features such as user authentication, food item addition through various methods (receipt, photo, barcode), and timely reminders about expiring items.
+### WasteNot App
+WasteNot is a web application designed to help users keep track of their food items, manage expiration dates, and make informed grocery decisions. The app includes features such as user authentication, food item addition through various methods (receipt, photo, barcode), and timely reminders about expiring items.
 
 ### Tech Stack
 #### Frontend:

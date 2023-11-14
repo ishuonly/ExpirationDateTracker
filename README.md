@@ -8,9 +8,7 @@ WasteNot is a web application designed to help users keep track of their food it
 #### Frontend:
 ReactJS, CSS
 #### Backend:
-Node.js
-Express.js
-FastAPI
+Node.js, Express.js, FastAPI
 #### Database:
 MongoDB
 #### Other APIs:

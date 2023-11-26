@@ -124,7 +124,7 @@ Frontend Response Handling:
 * Start the frontend and backend servers
 
 ### Contributing
-Contributions are welcome! Please follow our contribution guidelines.
+Contributions are welcome! Please follow our [Contribution Guidelines](https://github.com/ishuonly/ExpirationDateTracker/blob/main/CONTRIBUTION.md).
 
 ### License
 This project is licensed under the MIT License.

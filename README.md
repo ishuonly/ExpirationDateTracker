@@ -139,4 +139,4 @@ https://www.figma.com/file/ZH1gqgOhWrEb3ib4Np9LSO/Expiration-Date-Tracker?type=d
 https://tome.app/zeel-b98/wastenot-making-a-difference-one-expiry-date-at-a-time-cljbbfd0p1h0xmu3eeh2rrglp
 
 ### Note
-Navigate to different branches to access the code for different features
+The main branch is the main project folder. The rest of the other branches are for the history keeping. All the PRs created should be for the main branch.
